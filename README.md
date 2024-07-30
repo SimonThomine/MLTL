@@ -31,6 +31,15 @@ python train.py
 ```
 To modify the object categories, hyperparameters or dataset path, you can modify the config.yaml file.
 
+## When to use this approach ? 
+In the texture defect detection process, particularly within the textile industry, fast training and inference are crucial for productivity. This model offers near state-of-the-art performance with significantly faster training and inference times.
+<p align="center">
+  <img width="400" height="280" src="images/TrainingTime.png">  <img width="400" height="280" src="images/Latency.png">
+</p>
+<p align="center">
+  <img width="600" height="150" src="images/auroc.png">
+</p>
+
 ## Citation
 Please cite our paper in your publications if it helps your research. Even if it does not, you are welcome to cite us.
 ```
