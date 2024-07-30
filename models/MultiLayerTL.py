@@ -2,9 +2,9 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-class MLTF(nn.Module):
+class MLTL(nn.Module):
     def __init__(self,filters=[],widths=[],embeddingDim=64):
-        super(MLTF, self).__init__()
+        super(MLTL, self).__init__()
         
         self.embeddingDim=embeddingDim
         self.outputDim=max(widths)//2 

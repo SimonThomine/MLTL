@@ -6,7 +6,7 @@ from sklearn.metrics import roc_auc_score
 from dataset.mvtec import MVTecDefectDataset,MVTecTest
 from utils.util import  AverageMeter,readYamlConfig,loadWeights,genLoaders,isBetterModel, set_seed
 from models.extractor import teacherTimm
-from models.MultiLayerTF import MLTF
+from models.MultiLayerTL import MLTL
 
 class MltlTraining:          
     def __init__(self, data,device): 
@@ -47,7 +47,7 @@ class MltlTraining:
         print("multi layer fine tuning " + self.modelName+" on "+self.obj)
         self.extractor = teacherTimm(backbone_name=self.modelName,out_indices=self.outIndices).to(self.device)
         filters,widths=self.extractor.simulate_output_sizes(self.img_cropsize,self.img_cropsize)
-        self.classi=MLTF(filters=filters,widths=widths,embeddingDim=self.embedDim).to(self.device)
+        self.classi=MLTL(filters=filters,widths=widths,embeddingDim=self.embedDim).to(self.device)
         
     def train(self):
         
